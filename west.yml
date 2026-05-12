@@ -1,0 +1,26 @@
+# my-app/west.yml
+manifest:
+  version: "1.2"
+
+  remotes:
+    - name: micro-ros
+      url-base: https://github.com/micro-ROS
+
+  projects:
+    - name: zephyr
+      url: https://github.com/zephyrproject-rtos/zephyr
+      revision: v4.1.0
+      import:
+        path-prefix: deps
+        name-allowlist:
+          - cmsis          # richiesto da ARM/STM32 (Cortex-M)
+          - hal_stm32      # HAL STM32Cube
+          - hal_espressif  # driver ESP-IDF per Zephyr
+
+    - name: micro_ros_zephyr_module
+      url: https://github.com/micro-ROS/micro_ros_zephyr_module
+      revision: humble
+      path: modules/lib/micro_ros
+
+  self:
+    path: my-app
