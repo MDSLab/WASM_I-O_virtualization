@@ -1,7 +1,0 @@
-[manifest]
-path = my-app
-file = west.yml
-
-[zephyr]
-base = deps/zephyr
-
