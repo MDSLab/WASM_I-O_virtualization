@@ -6,3 +6,4 @@ build/
 demo_multithreading/
 deps/
 log/
+.west/
