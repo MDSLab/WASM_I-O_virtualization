@@ -1,0 +1,23 @@
+manifest:
+  defaults:
+    remote: zephyr
+
+  remotes:
+    - name: zephyr
+      url-base: https://github.com/zephyrproject-rtos
+    - name: microros
+      url-base: https://github.com/micro-ROS
+
+  projects:
+    - name: zephyr
+      remote: zephyr
+      revision: v4.1.0
+      import: true
+
+    - name: micro_ros_zephyr_module
+      remote: microros
+      revision: main          # oppure 'jazzy' / 'iron' / 'kilted' in base alla tua distro ROS 2
+      path: modules/micro_ros
+
+  self:
+    path: app

@@ -1,0 +1,22 @@
+/*
+ * nucleo_h723zg.overlay
+ *
+ * NUCLEO-H723ZG: USART3 è collegato alla ST-Link (Virtual COM Port)
+ * su PD8 (TX) / PD9 (RX).
+ */
+/ {
+    chosen {
+        microros-uart = &usart3;
+    };
+    gpio_outputs {
+        compatible = "gpio-leds";
+        pb8_out: pb8 {
+            gpios = <&gpiob 8 GPIO_ACTIVE_HIGH>;
+        };
+    };
+};
+
+&usart3 {
+    status = "okay";
+    current-speed = <115200>;
+};

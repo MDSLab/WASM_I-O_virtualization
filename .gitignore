@@ -1,0 +1,9 @@
+*.csv
+*.py
+.venv/
+.vscode/
+build/
+demo_multithreading/
+deps/
+my-app/
+log/

@@ -1,0 +1,15 @@
+/ {
+    chosen {
+        /* micro-ROS usa USART2 (Virtual COM Port ST-Link) */
+        microros-uart     = &usart2;
+
+        /* Disabilita console e shell su UART per evitare conflitti */
+        /* zephyr,console    = &usart2;  ← RIMUOVI */
+        /* zephyr,shell-uart = &usart2;  ← RIMUOVI */
+    };
+};
+
+&usart2 {
+    status = "okay";
+    current-speed = <115200>;
+};
